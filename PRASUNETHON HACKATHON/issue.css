@@ -1,0 +1,164 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0; /* Light Gray */
+    color: #333; /* Dark Gray */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #008DDA; /* Dark Blue */
+    color: #FFF; /* White */
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #FFF; /* White */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 40px 0;
+    background-color: #FFF; /* White */
+    border-bottom: 1px solid #DDD; /* Light Gray */
+}
+
+.section h2 {
+    color: #008DDA; /* Dark Blue */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.issue-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.issue {
+    background-color: #FFF; /* White */
+    border: 1px solid #DDD; /* Light Gray */
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.issue:hover {
+    transform: translateY(-5px);
+}
+
+.issue .issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.issue .issue-header h3 {
+    color: #008DDA; /* Dark Blue */
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.issue .issue-location {
+    color: #666; /* Gray */
+}
+
+.issue p {
+    margin-bottom: 10px;
+    color: #333; /* Dark Gray */
+}
+
+.vote {
+    display: flex;
+    align-items: center;
+}
+
+.vote-btn {
+    background-color: #41C9E2; /* Light Blue */
+    color: #FFF; /* White */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.vote-btn:hover {
+    background-color: #008DDA; /* Dark Blue */
+}
+
+.vote-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="file"] {
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    background-color: #008DDA; /* Dark Blue */
+    color: #FFF; /* White */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #005F8A; /* Slightly Darker Blue */
+}

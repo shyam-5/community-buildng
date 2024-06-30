@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Community Connect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ced4da;
+            color: #333;
+        }
+        .form-control::placeholder {
+            color: #999;
+        }
+        .btn-primary {
+            background-color: #2575fc;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #6a11cb;
+        }
+        .form-text {
+            text-align: center;
+        }
+        .form-text a {
+            color: #2575fc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <small class="form-text">Don't have an account? <a href="signup.html">Sign Up</a></small>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add your login logic here
+            // Redirect to the main page after successful login
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

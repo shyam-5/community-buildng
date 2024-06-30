@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issues - Community Connect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Same gradient as the home page */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #fff;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .issue-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        .issue {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .issue-header {
+            margin-bottom: 10px;
+        }
+        .issue-header h3 {
+            margin-bottom: 5px;
+            color: #2575fc; /* Issue title color */
+        }
+        .issue-location {
+            font-style: italic;
+            color: #ccc; /* Location color */
+        }
+        .issue-date {
+            margin-bottom: 15px;
+            color: #ccc; /* Date color */
+        }
+        .issue-description {
+            margin-bottom: 15px;
+            color: #eee; /* Description color */
+        }
+        .vote {
+            display: flex;
+            align-items: center;
+        }
+        .vote-btn {
+            background-color: #2575fc;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .vote-btn:hover {
+            background-color: #6a11cb;
+        }
+        .vote-count {
+            margin-left: 10px;
+            font-weight: bold;
+            color: #ccc; /* Vote count color */
+        }
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Community Connect</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="community-works.html">Community Works</a></li>
+                    <li><a href="report-issues.html">Report Issues</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="issue-voting" class="section">
+        <div class="container">
+            <h2>Current Issues</h2>
+            
+            <!-- Issue Cards -->
+            <div class="issue-container">
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Traffic Congestion on Main Street</h3>
+                        <span class="issue-location">Main Street, City Center</span>
+                    </div>
+                    <p class="issue-date">Date: June 25th, 2024</p>
+                    <p class="issue-description">Heavy traffic during rush hours causing delays and safety concerns for pedestrians.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">12 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Noisy Construction Work</h3>
+                        <span class="issue-location">Park Avenue, Residential Area</span>
+                    </div>
+                    <p class="issue-date">Date: June 28th, 2024</p>
+                    <p class="issue-description">Construction noise disrupting residents' peace and sleep during early mornings.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">8 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Lack of Street Lighting</h3>
+                        <span class="issue-location">Southside Avenue, Residential Area</span>
+                    </div>
+                    <p class="issue-date">Date: June 29th, 2024</p>
+                    <p class="issue-description">Inadequate street lighting leading to safety concerns for pedestrians and cyclists at night.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">5 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Potholes on High Street</h3>
+                        <span class="issue-location">High Street, Downtown</span>
+                    </div>
+                    <p class="issue-date">Date: June 30th, 2024</p>
+                    <p class="issue-description">Numerous potholes causing vehicle damage and traffic congestion during peak hours.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">10 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Trash Accumulation in Parks</h3>
+                        <span class="issue-location">Central Park, Recreation Area</span>
+                    </div>
+                    <p class="issue-date">Date: July 1st, 2024</p>
+                    <p class="issue-description">Overflowing trash bins and litter affecting park cleanliness and visitor experience.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">7 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>Water Pipeline Leak</h3>
+                        <span class="issue-location">Maple Avenue, Residential Area</span>
+                    </div>
+                    <p class="issue-date">Date: July 2nd, 2024</p>
+                    <p class="issue-description">Leakage in the water pipeline causing water wastage and road damage.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">6 votes</span>
+                    </div>
+                </div>
+
+                <div class="issue">
+                    <div class="issue-header">
+                        <h3>No Public Restrooms in City Center</h3>
+                        <span class="issue-location">City Center, Downtown</span>
+                    </div>
+                    <p class="issue-date">Date: July 3rd, 2024</p>
+                    <p class="issue-description">Lack of accessible public restrooms impacting residents, tourists, and businesses.</p>
+                    <div class="vote">
+                        <button class="vote-btn">Vote</button>
+                        <span class="vote-count">4 votes</span>
+                    </div>
+                </div>
+
+                <!-- Add more issue cards as needed -->
+
+            </div>
+        </div>
+    </section>
+
+    <section id="report-issue" class="section">
+        <div class="container">
+            <h2>Report an Issue</h2>
+            
+            <!-- Issue Reporting Form -->
+            <form id="report-form">
+                <div class="form-group">
+                    <label for="report-title">Title:</label>
+                    <input type="text" id="report-title" name="report-title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="report-date">Date:</label>
+                    <input type="date" id="report-date" name="report-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="report-location">Location:</label>
+                    <input type="text" id="report-location" name="report-location" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="report-description">Description:</label>
+                    <textarea id="report-description" name="report-description" class="form-control" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="report-media">Upload Photos/Videos:</label>
+                    <input type="file" id="report-media" name="report-media" class="form-control" accept="image/*, video/*">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript for issue voting and report submission
+        const voteButtons = document.querySelectorAll('.vote-btn');
+        const reportForm = document.getElementById('report-form');
+
+        // Event listener for voting buttons
+        voteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const countSpan = this.nextElementSibling;
+                let count = parseInt(countSpan.textContent);
+                count++;
+                countSpan.textContent = `${count} votes`;
+                this.disabled = true; // Disable button after voting
+            });
+        });
+
+        // Event listener for report form submission
+        reportForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Fetch form data
+            const formData = new FormData(reportForm);
+
+            // Display submitted data (for demonstration purposes)
+            console.log('Submitted Data:');
+            for (const [name, value] of formData) {
+                console.log(`${name}: ${value}`);
+            }
+
+            // You can add further functionality here, such as sending the data to a server, storing it locally, etc.
+            // For now, let's just alert the user that the report has been submitted.
+            alert('Your issue report has been successfully submitted!');
+
+            // Optional: Clear the form fields after submission
+            reportForm.reset();
+        });
+    </script>
+</body>
+</html>

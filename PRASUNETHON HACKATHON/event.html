@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333333;
+            text-transform: uppercase;
+        }
+        header .logo img {
+            max-width: 80px; /* Adjust the max-width as needed */
+            height: auto;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-right: 15px;
+        }
+        header nav ul li a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        header nav ul li a:hover {
+            color: #007bff;
+        }
+        .section {
+            flex: 1;
+            padding: 80px 0;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .event {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .event h3 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 20px;
+        }
+        .event p {
+            color: #666666;
+            margin-bottom: 5px;
+        }
+        .event button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .event button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto; /* Pushes footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/green-community-logo-template-design-260nw-1015274569.jpg" alt="Community Connect Logo">
+            </div>
+            <h1>Community Connect</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="community-work.html">Community Works</a></li>
+                    <li><a href="issue.html">Report Issues</a></li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="map.html">Maps</a></li> <!-- Added Maps item -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">Upcoming Events</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="event">
+                        <h3>Community Cleanup</h3>
+                        <p><strong>Date:</strong> July 5th, 2024</p>
+                        <p><strong>Time:</strong> 9:00 AM - 12:00 PM</p>
+                        <p><strong>Location:</strong> Central Park</p>
+                        <p>Join us for a community cleanup event to keep our city clean and green.</p>
+                        <button onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event">
+                        <h3>Blood Donation Camp</h3>
+                        <p><strong>Date:</strong> July 10th, 2024</p>
+                        <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                        <p><strong>Location:</strong> City Hospital</p>
+                        <p>Donate blood and save lives. Every donation counts!</p>
+                        <button onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event">
+                        <h3>Food Drive</h3>
+                        <p><strong>Date:</strong> July 15th, 2024</p>
+                        <p><strong>Time:</strong> 11:00 AM - 2:00 PM</p>
+                        <p><strong>Location:</strong> Local Community Center</p>
+                        <p>Collecting food items for local shelters. Join us in making a difference!</p>
+                        <button onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event">
+                        <h3>Environmental Awareness Workshop</h3>
+                        <p><strong>Date:</strong> July 20th, 2024</p>
+                        <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+                        <p><strong>Location:</strong> City Library</p>
+                        <p>Learn about sustainable practices and how to reduce your environmental footprint.</p>
+                        <button onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event">
+                        <h3>Senior Citizens Day Out</h3>
+                        <p><strong>Date:</strong> July 25th, 2024</p>
+                        <p><strong>Time:</strong> 10:00 AM - 1:00 PM</p>
+                        <p><strong>Location:</strong> Senior Community Center</p>
+                        <p>A day of activities and companionship for our senior community members.</p>
+                        <button onclick="signup()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Community Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function signup() {
+            alert("You have successfully signed up for the event!");
+            // You can add further functionality here, like form submissions or redirects
+        }
+    </script>
+</body>
+</html>

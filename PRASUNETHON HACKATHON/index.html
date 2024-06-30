@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Connect</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #343a40;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+        header .header-title {
+            display: flex;
+            align-items: center;
+        }
+        header .header-title img {
+            max-width: 60px;
+            margin-right: 15px;
+        }
+        header h1 {
+            font-size: 1.75rem;
+            color: #007bff;
+        }
+        nav {
+            background-color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background-color: #ffffff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #17a2b8;
+            font-weight: 700;
+        }
+        .form-group label {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #138496;
+            border-color: #138496;
+        }
+        .events-list,
+        .community-works-list {
+            margin-top: 20px;
+        }
+        .event,
+        .community-work {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .event:last-child,
+        .community-work:last-child {
+            border-bottom: none;
+        }
+        .event h3,
+        .community-work h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #007bff;
+        }
+        .event p,
+        .community-work p {
+            margin: 5px 0;
+            color: #666666;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title">
+                <img src="img/green-community-logo-template-design-260nw-1015274569.jpg" alt="Community Connect Logo">
+                <h1>Community Connect</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#location-selection">Location</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#community-works">Community Works</a></li>
+                <li><a href="issue.html">Report Issue</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <section id="location-selection" class="section">
+        <div class="container">
+            <h2 class="section-title">Select Your Location</h2>
+            <form id="location-form">
+                <div class="form-group">
+                    <label for="locationSelect">Select or Share Your Location:</label>
+                    <select class="form-control" id="locationSelect" onchange="showEventsAndWorks()">
+                        <option value="area1">Area 1</option>
+                        <option value="area2">Area 2</option>
+                        <option value="area3">Area 3</option>
+                        <!-- Add more options based on your locations -->
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="getLocationAndShowEvents()">Use Current Location</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-list" id="eventsList">
+                <!-- Event items will be dynamically added here -->
+            </div>
+            <p class="text-center"><a href="event.html">View More Events ></a></p>
+        </div>
+    </section>
+
+    <section id="community-works" class="section">
+        <div class="container">
+            <h2 class="section-title">Community Works</h2>
+            <div class="community-works-list" id="worksList">
+                <!-- Community work items will be dynamically added here -->
+            </div>
+            <p class="text-center"><a href="community-work.html">View More Community Works ></a></p>
+        </div>
+    </section>
+
+    <section id="newsletter-signup" class="section">
+        <div class="container">
+            <h2 class="section-title">Stay Informed</h2>
+            <p class="lead text-center">Sign up for our newsletter to receive the latest updates and news.</p>
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2024 Community Connect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        function getLocationAndShowEvents() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    // Use latitude and longitude to determine nearest location
+                    var nearestLocation = determineNearestLocation(latitude, longitude);
+
+                    // Update select dropdown with nearest location
+                    var locationSelect = document.getElementById("locationSelect");
+                    for (var i = 0; i < locationSelect.options.length; i++) {
+                        if (locationSelect.options[i].value === nearestLocation) {
+                            locationSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+
+                    // Call function to show events and community works for nearest location
+                    showEventsAndWorks();
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function determineNearestLocation(latitude, longitude) {
+            // Example: Determine nearest location based on latitude and longitude
+            // Replace with your logic to determine nearest location
+            // For example, you could calculate distances or use a predefined map of locations
+            // Here, we're just returning a hardcoded value for demonstration
+            return "area1"; // Replace with actual location determination logic
+        }
+
+        function showEventsAndWorks() {
+            var selectedLocation = document.getElementById("locationSelect").value;
+            
+            // Example data (replace with actual data retrieval logic)
+            var eventsData = {
+                area1: [
+                    { title: "Community Cleanup", date: "July 5th, 2024", time: "9:00 AM - 12:00 PM", location: "Central Park", description: "Join us for a community cleanup event to keep our city clean and green." },
+                    { title: "Health Fair", date: "July 10th, 2024", time: "10:00 AM - 2:00 PM", location: "City Hall", description: "Free health checkups and wellness activities for the community." }
+                ],
+                area2: [
+                    { title: "Charity Run", date: "July 15th, 2024", time: "8:00 AM - 11:00 AM", location: "Riverside Park", description: "Participate in our charity run to support local shelters." },
+                    { title: "Food Drive", date: "July 20th, 2024", time: "11:00 AM - 4:00 PM", location: "Community Center", description: "Help us collect and distribute food to those in need." }
+                ],
+                area3: [
+                    { title: "Book Fair", date: "July 25th, 2024", time: "10:00 AM - 6:00 PM", location: "Library Plaza", description: "Explore a wide range of books and meet local authors." },
+                    { title: "Art Exhibition", date: "July 30th, 2024", time: "5:00 PM - 8:00 PM", location: "Art Gallery", description: "Showcasing works from talented local artists." }
+                ]
+            };
+
+            var worksData = {
+                area1: [
+                    { title: "Park Beautification", date: "July 7th, 2024", time: "9:00 AM - 1:00 PM", location: "Community Park", description: "Join us to plant flowers and clean up the park." },
+                    { title: "Recycling Workshop", date: "July 12th, 2024", time: "2:00 PM - 4:00 PM", location: "Green Center", description: "Learn how to recycle effectively and reduce waste." }
+                ],
+                area2: [
+                    { title: "Neighborhood Watch Meeting", date: "July 17th, 2024", time: "6:00 PM - 8:00 PM", location: "Community Hall", description: "Discuss safety measures and get to know your neighbors." },
+                    { title: "Volunteer Training", date: "July 22nd, 2024", time: "10:00 AM - 1:00 PM", location: "Volunteer Center", description: "Training session for new community volunteers." }
+                ],
+                area3: [
+                    { title: "Community Garden Planting", date: "July 27th, 2024", time: "9:00 AM - 12:00 PM", location: "Community Garden", description: "Help us plant new crops and maintain the garden." },
+                    { title: "Senior Citizen Assistance", date: "July 31st, 2024", time: "10:00 AM - 3:00 PM", location: "Senior Center", description: "Assist senior citizens with various tasks and activities." }
+                ]
+            };
+
+            // Display events for the selected location
+            var eventsList = document.getElementById("eventsList");
+            eventsList.innerHTML = "";
+            eventsData[selectedLocation].forEach(function(event) {
+                var eventHtml = `
+                    <div class="event">
+                        <h3>${event.title}</h3>
+                        <p><strong>Date:</strong> ${event.date}</p>
+                        <p><strong>Time:</strong> ${event.time}</p>
+                        <p><strong>Location:</strong> ${event.location}</p>
+                        <p>${event.description}</p>
+                    </div>
+                `;
+                eventsList.innerHTML += eventHtml;
+            });
+
+            // Display community works for the selected location
+            var worksList = document.getElementById("worksList");
+            worksList.innerHTML = "";
+            worksData[selectedLocation].forEach(function(work) {
+                var workHtml = `
+                    <div class="community-work">
+                        <h3>${work.title}</h3>
+                        <p><strong>Date:</strong> ${work.date}</p>
+                        <p><strong>Time:</strong> ${work.time}</p>
+                        <p><strong>Location:</strong> ${work.location}</p>
+                        <p>${work.description}</p>
+                    </div>
+                `;
+                worksList.innerHTML += workHtml;
+            });
+        }
+
+        // Initialize events and community works for default location on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            showEventsAndWorks();
+        });
+    </script>
+</body>
+</html>
